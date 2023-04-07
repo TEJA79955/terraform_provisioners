@@ -1,0 +1,18 @@
+pipeline {
+    agent {label 'jdk-17'}
+    stages {
+        stage ('vcs') {
+            steps{
+                git url: 'https://github.com/TEJA79955/terraform_provisioners.git'
+                branch: 'main'
+
+            }
+        }
+        stage ('terraform') {
+            steps{
+                sh 'terraform init'
+                sh 'terraform apply -auto-approve'
+            }
+        }
+    }
+}
