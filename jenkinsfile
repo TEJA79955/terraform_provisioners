@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('vcs') {
             steps{
-                git url: 'https://github.com/TEJA79955/terraform_provisioners.git'
+                git url: 'https://github.com/TEJA79955/terraform_provisioners.git',
                 branch: 'main'
 
             }
